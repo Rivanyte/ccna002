@@ -15,19 +15,19 @@ config t
       exec-timeout 0 0
    Int Vlan 1
      no shutdown
-	 ip add 10.__.1.2 255.255.255.0
+	 ip add 10.41.1.2 255.255.255.0
 	 description MGMTDATA
    Int Vlan 10
      no shutdown
-	 ip add 10.__.10.2 255.255.255.0
+	 ip add 10.41.10.2 255.255.255.0
 	 description WIRELESS
    Int Vlan 50
      no shutdown
-	 ip add 10.__.50.2 255.255.255.0
+	 ip add 10.41.50.2 255.255.255.0
 	 description IPCCTV
    Int Vlan 100
      no shutdown
-	 ip add 10.__.100.2 255.255.255.0
+	 ip add 10.41.100.2 255.255.255.0
 	 description VOICEVLAN
 
 !!!DAPAT 7 UNDER SCORE ANG NA EDIT MO  ( LINE 34 to 68 PASTE TO COREBABA SWITCH )
@@ -49,53 +49,53 @@ config t
    Int Gi 0/1
      no shutdown
 	  no switchport
-	  ip add 10._._.4 255.255.255.0
+	  ip add 10.41.41.4 255.255.255.0
    Int Vlan 1
      no shutdown
-	 ip add 10._.1.4 255.255.255.0
+	 ip add 10.41.1.4 255.255.255.0
 	 description MGMTDATA
    Int Vlan 10
      no shutdown
-	 ip add 10._.10.4 255.255.255.0
+	 ip add 10.41.10.4 255.255.255.0
 	 description WIRELESS
    Int Vlan 50
      no shutdown
-	 ip add 10._.50.4 255.255.255.0
+	 ip add 10.41.50.4 255.255.255.0
 	 description IPCCTV
    Int Vlan 100
      no shutdown
-	 ip add 10._.100.4 255.255.255.0
+	 ip add 10.41.100.4 255.255.255.0
 	 description VOICEVLAN
 	 
 !DHCP: DYNAMIC HOST CONFIGURATION PROTOCOL
 !!!DAPAT 21 UNDER SCORE ANG NA EDIT MO  ( LINE 72 to 99 PASTE TO COREBABA SWITCH )
 !@@@LEAF SWITCH
 config t
-ip dhcp Excluded-add 10._.1.1 10._.1.100
-ip dhcp Excluded-add 10._.10.1 10._.10.100
-ip dhcp Excluded-add 10._.50.1 10._.50.100
-ip dhcp Excluded-add 10._.100.1 10._.100.100
+ip dhcp Excluded-add 10.41.1.1 10.41.1.100
+ip dhcp Excluded-add 10.41.10.1 10.41.10.100
+ip dhcp Excluded-add 10.41.50.1 10.41.50.100
+ip dhcp Excluded-add 10.41.100.1 10.41.100.100
 ip dhcp pool MGMTDATA
-   network 10._.1.0 255.255.255.0
-   default-router 10._.1.4
+   network 10.41.1.0 255.255.255.0
+   default-router 10.41.1.4
    domain-name MGMTDATA.COM
-   dns-server 10._.1.10
+   dns-server 10.41.1.10
 ip dhcp pool WIFIDATA
-   network 10._.10.0 255.255.255.0
+   network 10.41.10.0 255.255.255.0
    default-router 10._.10.4
    domain-name WIFIDATA.COM
-   dns-server 10._.1.10
+   dns-server 10.41.1.10
 ip dhcp pool IPCCTV
-   network 10._.50.0 255.255.255.0
+   network 10.41.50.0 255.255.255.0
    default-router 10._.50.4
    domain-name IPCCTV.COM
-   dns-server 10._.1.10
+   dns-server 10.41.1.10
 ip dhcp pool VOICEVLAN
-   network 10._.100.0 255.255.255.0
-   default-router 10._.100.4
+   network 10.41.100.0 255.255.255.0
+   default-router 10.41.100.4
    domain-name VOICEVLAN.COM
-   dns-server 10._.1.10
-   option 150 ip 10._.100.8   
+   dns-server 10.41.1.10
+   option 150 ip 10.41.100.8   
    END
 
 !!CREATING AND PLACING PORTS INSIDEAVLAN:
