@@ -323,7 +323,7 @@ dial-peer voice 82 Voip
 @@@@@@
 !@@@EDGE ROUTE CONFIG
 config t
-   hostname EDGE-m
+   hostname EDGE-41
    enable secret pass
    service password-encryption
    no logging console
@@ -338,15 +338,15 @@ config t
       exec-timeout 0 0
    Int Gi 0/0/0
      description INSIDE
-     ip add 10.m.m.1 255.255.255.0
+     ip add 10.41.41.1 255.255.255.0
 	 no shutdown
    Int Gi 0/0/1
      description OUTSIDE
-	 ip add 200.0.0.m 255.255.255.0
+	 ip add 200.0.0.41 255.255.255.0
 	 no shutdown
    Int Loopback 0
      description VIRTUALIP
-	 ip add m.0.0.1 255.255.255.255
+	 ip add 41.0.0.1 255.255.255.255
  end
 
  !!!STATIC ROUTING FOR MININUM WAGERS: 645php/day
