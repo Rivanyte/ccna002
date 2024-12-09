@@ -353,10 +353,10 @@ sirc: sh ip route connected
 @EDGE:
 config t
 router ospf 1
-router-id _.0.0.1
+router-id 41.0.0.1
 network 200.0.0.0  0.0.0.255 area 0
-network 10._._.0  0.0.0.255 area 0
-network _.0.0.1  0.0.0.0 area 0
+network 10.41.41.0  0.0.0.255 area 0
+network 41.0.0.1  0.0.0.0 area 0
 Interface gi 0/0/0
  ip ospf network point-to-point
 end
@@ -364,8 +364,8 @@ end
 @CoreBABA:
 config t
 router ospf 1
-router-id 10._._.4
-network 10._.0.0  0.0.255.255 area 0
+router-id 10.41.41.4
+network 10.41.0.0  0.0.255.255 area 0
 int gi 0/1
  ip ospf network point-to-point
 end
