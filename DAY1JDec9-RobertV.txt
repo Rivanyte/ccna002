@@ -148,7 +148,7 @@ host 10._.50.6 255.255.255.0
 client-identifier 001a.0704.7f5b
 ip dhcp pool CAMERA8
 host 10._.50.8 255.255.255.0
-client-identifier ____.____.____
+client-identifier 001a.0709.4929
 
 !!cisco unified call manager Express command
 !@@@CUCM-M
@@ -425,7 +425,7 @@ route  add  200.0.0.0   mask  255.255.255.0   10._.1.4
 ********************************************
 
  
-@@@@@@@@@
+@@@@@@@@@IVRS INTERACTIVE VOICE RESPONSE SYSTEM: MATIK SAGOT
 
 config t
 dial-peer voice 69 voip
