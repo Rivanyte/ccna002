@@ -1,6 +1,6 @@
 !@@@CORE SWITCH SA TAAS
 config t
-   hostname COREtaas4112
+   hostname COREtaas_41
    enable secret pass
    service password-encryption
    no logging console
@@ -33,7 +33,7 @@ config t
 !!!DAPAT 7 UNDER SCORE ANG NA EDIT MO  ( LINE 34 to 68 PASTE TO COREBABA SWITCH )
 !@@@LeafSwitchONLY
 config t
-   hostname COREbaba__
+   hostname COREbaba41
    enable secret pass
    service password-encryption
    no logging console
@@ -82,12 +82,12 @@ ip dhcp pool MGMTDATA
    dns-server 10.41.1.10
 ip dhcp pool WIFIDATA
    network 10.41.10.0 255.255.255.0
-   default-router 10._.10.4
+   default-router 10.41.10.4
    domain-name WIFIDATA.COM
    dns-server 10.41.1.10
 ip dhcp pool IPCCTV
    network 10.41.50.0 255.255.255.0
-   default-router 10._.50.4
+   default-router 10.41.50.4
    domain-name IPCCTV.COM
    dns-server 10.41.1.10
 ip dhcp pool VOICEVLAN
@@ -137,18 +137,22 @@ Int Fa 0/7
   switchport mode access
   switchport voice vlan 100 
   mls qos trust device cisco-phone 
- switchoprt access vlan 1
+ switchport access vlan 1
  end
 
 !IP CAMERAS NEED MAC ADDRESS RESERVATION FOR FIXED IP  (LINE 144 to 151 PASTE TO COREBABA)
 config t
 ip routing
 ip dhcp pool CAMERA6
-host 10._.50.6 255.255.255.0
+host 10.41.50.6 255.255.255.0
 client-identifier 001a.0704.7f5b
 ip dhcp pool CAMERA8
-host 10._.50.8 255.255.255.0
+host 10.41.50.8 255.255.255.0
 client-identifier 001a.0709.4929
+
+end
+
+sh ip dhcp binding
 
 !!cisco unified call manager Express command
 !@@@CUCM-M
