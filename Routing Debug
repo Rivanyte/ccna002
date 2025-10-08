@@ -1,0 +1,5 @@
+route add 10.0.0.0 mask 255.0.0.0 10.m.1.4
+
+!! sa route add na ip depdene kung anong ip yun
+!!sa mask as usual yung 255 pero gawing zero para ma scan lahat
+!! last is the switch.
